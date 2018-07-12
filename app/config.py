@@ -6,6 +6,7 @@ local_base = 'postgres://appyisypegdoef:92fca4b6df0ffe561d39164a57b90ec4a7e6267d
 #database_name = 'chatbotservice'
 database_name = 'd3kcjb36e6b19a'
 
+
 class BaseConfig:
     #
     #Base application configuration

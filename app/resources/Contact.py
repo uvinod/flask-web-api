@@ -15,4 +15,4 @@ class ContactResource(Resource):
             contacts = Contact.query.all()
 
         contacts = contacts_schema.dump(contacts).data
-        return {'status': 'success', 'data': contacts}, 200
+        return {'status': 'success', 'message': contacts[0]['contact_value']}, 200
