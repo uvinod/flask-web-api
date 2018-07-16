@@ -17,20 +17,39 @@ class Contact(db.Model):
         self.contact_value = contact_value
         self.contact_key = contact_key
 
-class Customer(db.Model):
-    __tablename__ = 'customer'
+class Customers(db.Model):
+    __tablename__ = 'customers'
 
     id = db.Column(db.Integer,primary_key=True)
-    content = db.Column(db.Text)
+    type = db.Column(db.String(100))
+    values = db.Column(db.Text)
 
-    def __init__(self, content):
-        self.content = content
+    def __init__(self, content, values):
+        self.type = type
+        self.values = values
+
+class Partners(db.Model):
+    __tablename__ = 'partners'
+
+    id = db.Column(db.Integer,primary_key=True)
+    type = db.Column(db.String(100))
+    values = db.Column(db.Text)
+
+    def __init__(self, content, values):
+        self.type = type
+        self.values = values
 
 class ContactSchema(ma.Schema):
     id = fields.Integer()
     contact_key = fields.String()
     contact_value = fields.String()
 
-class CustomerSchema(ma.Schema):
+class CustomersSchema(ma.Schema):
     id = fields.Integer()
-    content = fields.String()
+    type = fields.String()
+    values = fields.String()
+
+class PartnersSchema(ma.Schema):
+    id = fields.Integer()
+    type = fields.String()
+    values = fields.String()
